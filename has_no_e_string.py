@@ -12,7 +12,7 @@ def has_no_e(words):
 fin=open("words.txt")
 
 for line in fin:
-    line=fin.readline()
+   # line=fin.readline()
     total_count=total_count+1
     word=line.strip()
     if has_no_e(word) == True:
