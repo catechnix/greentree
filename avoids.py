@@ -8,7 +8,6 @@ def avoid(words,letters):
             return False
            
     print ("Words have no avoided letters")
-    
     print(words)
     return True
 
@@ -17,7 +16,7 @@ def avoid(words,letters):
 
 def avoids(letters):
     count=0
-    fin=open("words.txt")
+    fin=open("words_org.txt")
     for line in fin: 
          
         words=line.strip()
