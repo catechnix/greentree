@@ -15,10 +15,22 @@ def search_dir(dir):
         for name in os.listdir(dir): 
             new_dir= os.path.join(dir, name)
             #print(new_dir[-3:])
-            if os.path.isfile(new_dir) and new_dir[-3:] == 'mp3':
-                path_li.append(new_dir)
-                print(new_dir)
+            if os.path.isfile(new_dir):
+                if new_dir[-3:] == 'mp3':
+                    path_li.append(new_dir)
 
-        else:
-            search_dir(new_dir)
+            else:
+                search_dir(new_dir)
+        return path_li
 search_dir(dir)
+
+def check_sum(dir):
+    lis_checksum=[]
+    li_files=search_dir(dir)
+    for file in li_files:
+        cmd='md5sum' + file
+        fp=os.popen(cmd)
+        res=fp.read()
+        
+
+
